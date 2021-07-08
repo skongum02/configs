@@ -13,3 +13,7 @@ cd ~/.vim/pack/vkong/start
 git clone https://tpope.io/vim/surround.git
 vim -u NONE -c "helptags surround/doc" -c q
 ```
+
+command line tools
+* bat
+* delta (git-delta)
