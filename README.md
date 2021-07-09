@@ -17,3 +17,5 @@ vim -u NONE -c "helptags surround/doc" -c q
 command line tools
 * bat
 * delta (git-delta)
+* the_silver_searcher (ag)
+* fzf
