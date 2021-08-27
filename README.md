@@ -19,3 +19,10 @@ command line tools
 * delta (git-delta)
 * the_silver_searcher (ag)
 * fzf
+
+## Nix
+
+* Install Nix
+* Install nix-darwin
+* `nix-channel --update` for updating darwin package
+* `darwin-rebuild switch` to build new darwin configs 
