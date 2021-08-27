@@ -10,6 +10,8 @@
       fzf
       ag
       tmux
+      gh
+      alacritty
 
     ];
 
