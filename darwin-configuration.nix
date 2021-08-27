@@ -12,6 +12,7 @@
       tmux
       gh
       alacritty
+      emacs
 
     ];
 
