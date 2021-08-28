@@ -12,6 +12,7 @@
       tmux
       gh
       alacritty
+      source-code-pro
       emacs
 
     ];
