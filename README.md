@@ -27,6 +27,7 @@ command line tools (already a part of nix configs)
 * Install nix-darwin
 * `nix-channel --update` for updating darwin package
 * `darwin-rebuild switch` to build new darwin configs 
+* `nix-env -qaP <package-name>` query package 
 
 ## Neovim
 * Follow guide for copying .vimrc to init.vim from neovim website
