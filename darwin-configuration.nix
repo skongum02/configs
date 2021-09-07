@@ -14,7 +14,7 @@
       alacritty
       source-code-pro
       emacs
-
+      jq
     ];
 
   # Use a custom configuration.nix location.
