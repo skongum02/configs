@@ -15,6 +15,7 @@
       source-code-pro
       emacs
       jq
+      go
     ];
 
   # Use a custom configuration.nix location.
