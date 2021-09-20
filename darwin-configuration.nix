@@ -16,6 +16,7 @@
       emacs
       jq
       go
+      ripgrep
     ];
 
   # Use a custom configuration.nix location.
