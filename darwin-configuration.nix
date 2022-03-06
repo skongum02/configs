@@ -8,7 +8,7 @@
       bat
       delta
       fzf
-      ag
+      silver-searcher
       tmux
       gh
       alacritty
