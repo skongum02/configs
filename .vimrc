@@ -93,9 +93,11 @@ endif
 inoremap <C-U> <C-G>u<C-U>
 
 if has('mouse')
+" for mac use set mouse=i
 	  set mouse=a
 endif
 
 set number
+set clipboard+=unnamed
 
 " vim:set ft=vim et sw=2:
