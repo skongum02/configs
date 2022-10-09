@@ -17,6 +17,7 @@
       jq
       go
       ripgrep
+      ncurses # to install term-256 color for tmux
     ];
 
   # Use a custom configuration.nix location.
