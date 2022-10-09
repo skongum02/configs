@@ -31,3 +31,10 @@ command line tools (already a part of nix configs)
 
 ## Neovim
 * Follow guide for copying .vimrc to init.vim from neovim website
+
+## tmux on mac, backspace not working.
+```
+# this is after ncurses is properly installed, make sure using the correct infocmp
+infocmp tmux-256color > ~/tmux-256color.info
+tic -xe tmux-256color ~/tmux-256color.info
+```
