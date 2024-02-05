@@ -24,9 +24,11 @@ command line tools (already a part of nix configs)
 ## Nix (for mac)
 
 * Install Nix
-* Install nix-darwin
-* `nix-channel --update` for updating darwin package
-* `darwin-rebuild switch` to build new darwin configs 
+  * https://github.com/DeterminateSystems/nix-installer
+* Install home-manager
+  * https://nix-community.github.io/home-manager/index.xhtml#ch-installation
+* `nix-channel --update` for updating package
+* `home-manager switch` to build new configs 
 * `nix-env -qaP <package-name>` query package 
 
 ## Neovim
