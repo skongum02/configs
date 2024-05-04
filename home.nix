@@ -91,4 +91,44 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.tmux = {
+    enable = true;
+    historyLimit = 10000;
+    keyMode = "vi";
+  };
+
+  programs.vim = {
+    enable = true;
+    settings = {
+      history = 1000;
+      number = true;
+    };
+    extraConfig = ''
+       set autoindent
+       set backspace=indent,eol,start
+       set complete-=i
+       set smarttab
+       set autoread
+       set mouse=a
+       set clipboard+=unnamedplus
+    '';
+  };
+
+  programs.zsh = {
+    enable = true;
+    defaultKeymap = "viins";
+    oh-my-zsh.theme = "vein";
+    initExtra = ''
+        bindkey "^R" history-incremental-search-backward
+
+        # For linux
+        bindkey "^[[A" history-beginning-search-backward
+        bindkey "^[[B" history-beginning-search-forward
+
+        # For mac
+        # bindkey "$terminfo[kcuu1]" history-beginning-search-backward
+      '';
+  };
+
 }
