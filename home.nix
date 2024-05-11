@@ -98,6 +98,13 @@
     keyMode = "vi";
   };
 
+  programs.neovim = {
+    enable = true;
+    extraConf = ''
+      set number
+    '';
+  };
+
   programs.vim = {
     enable = true;
     settings = {
@@ -117,9 +124,17 @@
 
   programs.zsh = {
     enable = true;
+    autosuggestion = {
+      enable = true;
+    };
+    syntaxHighlighting = {
+      enable = true;
+    };
     defaultKeymap = "viins";
     oh-my-zsh.theme = "vein";
     initExtra = ''
+        bindkey -v
+        KEYTIMEOUT=1
         bindkey "^R" history-incremental-search-backward
 
         # For linux
@@ -128,7 +143,7 @@
 
         # For mac
         # bindkey "$terminfo[kcuu1]" history-beginning-search-backward
-      '';
+    '';
   };
 
 }
