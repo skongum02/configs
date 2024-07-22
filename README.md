@@ -33,6 +33,7 @@ command line tools (already a part of nix configs)
 
 ## Neovim
 * Follow guide for copying .vimrc to init.vim from neovim website
+* Use lazy.nvim for plugins
 
 ## tmux on mac, backspace not working.
 ```
