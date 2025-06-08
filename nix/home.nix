@@ -6,6 +6,8 @@
   home.username = "vk";
   home.homeDirectory = "/Users/vk";
 
+  nixpkgs.config.allowUnfree = true;
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -38,8 +40,15 @@
     pkgs.kubectl
     pkgs.awscli2
     pkgs.pulumi
-    pkgs.python3
+    (pkgs.python311.withPackages (ppkgs: [
+      ppkgs.pip
+      ppkgs.virtualenv
+    ]))
     pkgs.warp-terminal
+    pkgs.pdm
+    pkgs.jdk21
+    pkgs.k9s
+    pkgs.uv
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
