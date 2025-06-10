@@ -144,6 +144,7 @@
       theme = "vein";
     };
     initContent = ''
+        bindkey -v
         KEYTIMEOUT=1
         bindkey "^R" history-incremental-search-backward
 
