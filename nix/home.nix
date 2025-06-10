@@ -22,7 +22,6 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    pkgs.neovim
     pkgs.htop
     pkgs.bat
     pkgs.delta
@@ -140,7 +139,7 @@
     };
     defaultKeymap = "viins";
     oh-my-zsh.theme = "vein";
-    initExtra = ''
+    initContent = ''
         bindkey -v
         KEYTIMEOUT=1
         bindkey "^R" history-incremental-search-backward
