@@ -26,7 +26,7 @@ command line tools (already a part of nix configs)
 * Install Nix
   * https://github.com/DeterminateSystems/nix-installer
 * Install home-manager
-  * https://nix-community.github.io/home-manager/index.xhtml#ch-installation
+  * https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-standalone
 * `nix-channel --update` for updating package
 * `home-manager switch` to build new configs 
 * `nix-env -qaP <package-name>` query package 
