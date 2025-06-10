@@ -138,9 +138,12 @@
       enable = true;
     };
     defaultKeymap = "viins";
-    oh-my-zsh.theme = "vein";
+    oh-my-zsh = {
+      enable = true;
+      custom = "$HOME/.config/oh-my-zsh";
+      theme = "vein";
+    };
     initContent = ''
-        bindkey -v
         KEYTIMEOUT=1
         bindkey "^R" history-incremental-search-backward
 
