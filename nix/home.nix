@@ -39,16 +39,15 @@
     pkgs.git-lfs
     pkgs.kubectl
     pkgs.awscli2
-    pkgs.pulumi
     (pkgs.python311.withPackages (ppkgs: [
       ppkgs.pip
       ppkgs.virtualenv
     ]))
-    pkgs.warp-terminal
     pkgs.pdm
     pkgs.jdk21
     pkgs.k9s
     pkgs.uv
+    pkgs.vscode
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -109,7 +108,7 @@
 
   programs.neovim = {
     enable = true;
-    extraConf = ''
+    extraConfig = ''
       set number
     '';
   };
