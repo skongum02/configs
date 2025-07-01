@@ -101,7 +101,7 @@
 
   programs.tmux = {
     enable = true;
-    historyLimit = 10000;
+    historyLimit = 20000;
     keyMode = "vi";
   };
 
