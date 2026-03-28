@@ -98,6 +98,21 @@ if has('mouse')
 endif
 
 set number
-set clipboard+=unnamed
+
+if $SSH_CONNECTION != ""
+    " REMOTE: Use OSC 52 to tunnel yanks through SSH
+    function! OscYank()
+        let l:buffer = getreg('"')
+        let l:encoded = system('base64 | tr -d "\n"', l:buffer)
+        let l:sequence = "\e]52;c;" . l:encoded . "\x07"
+        silent call writefile([l:sequence], "/dev/tty", "b")
+    endfunction
+    vnoremap y y:call OscYank()<CR>
+else
+    " LOCAL: Use the native Mac clipboard
+    if has('clipboard')
+        set clipboard^=unnamed,unnamedplus
+    endif
+endif
 
 " vim:set ft=vim et sw=2:
