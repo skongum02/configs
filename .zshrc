@@ -1,6 +1,9 @@
 bindkey -v
 export KEYTIMEOUT=1
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
@@ -26,3 +29,25 @@ bindkey "^[[B" history-beginning-search-forward
 
 # For mac
 # bindkey "$terminfo[kcuu1]" history-beginning-search-backward
+
+# 1. Standard Zsh setup
+autoload -U colors && colors
+setopt PROMPT_SUBST
+
+# 2. Manual Git Info (Replaces Oh My Zsh's git_prompt_info)
+git_prompt_info() {
+  local ref=$(git symbolic-ref --short HEAD 2>/dev/null)
+  if [[ -n "$ref" ]]; then
+    # Check if dirty
+    local dirty=""
+    [[ -n $(git status --組合 -uno 2>/dev/null) ]] && dirty="%{$fg[yellow]%}✗"
+    
+    # Replicate your specific OMZ theme variables
+    echo "%{$fg_bold[blue]%}git:(%{$fg[red]%}${ref}%{$fg[blue]%})${dirty}%{$reset_color%} "
+  fi
+}
+
+# 3. Your Prompt (exactly as you had it)
+PROMPT='%(?.%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%d%{$reset_color%} $(git_prompt_info)
+λ '
+RPROMPT='[%*]'
