@@ -34,20 +34,20 @@ bindkey "^[[B" history-beginning-search-forward
 autoload -U colors && colors
 setopt PROMPT_SUBST
 
-# 2. Manual Git Info (Replaces Oh My Zsh's git_prompt_info)
+# 2. Manual Git Info
 git_prompt_info() {
   local ref=$(git symbolic-ref --short HEAD 2>/dev/null)
   if [[ -n "$ref" ]]; then
-    # Check if dirty
     local dirty=""
-    [[ -n $(git status --組合 -uno 2>/dev/null) ]] && dirty="%{$fg[yellow]%}✗"
+    # Fixed the flag to --porcelain (standard for scripts)
+    [[ -n $(git status --porcelain -uno 2>/dev/null) ]] && dirty="%{$fg[yellow]%}✗"
     
-    # Replicate your specific OMZ theme variables
     echo "%{$fg_bold[blue]%}git:(%{$fg[red]%}${ref}%{$fg[blue]%})${dirty}%{$reset_color%} "
   fi
 }
 
-# 3. Your Prompt (exactly as you had it)
-PROMPT='%(?.%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%d%{$reset_color%} $(git_prompt_info)
+# 3. Your Corrected Prompt
+PROMPT='%(?.%{$fg_bold[green]%}➜ .%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%d%{$reset_color%} $(git_prompt_info)
 λ '
+
 RPROMPT='[%*]'
